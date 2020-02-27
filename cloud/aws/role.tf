@@ -4,13 +4,13 @@ data "aws_iam_policy_document" "signalfx_assume_policy" {
 
 		principals {
 			type = "AWS"
-			identifiers = [signalfx_aws_external_integration.aws_claranet_extern.signalfx_aws_account]
+			identifiers = [signalfx_aws_external_integration.aws_claranet_external.signalfx_aws_account]
 		}
 
 		condition {
 			test = "StringEquals"
 			variable = "sts:ExternalId"
-			values = [signalfx_aws_external_integration.aws_claranet_extern.external_id]
+			values = [signalfx_aws_external_integration.aws_claranet_external.external_id]
 		}
 	}
 }
