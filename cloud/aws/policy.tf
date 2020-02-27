@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "aws_read_permissions" {
-	name = "SignalFxReadPermissionsPolicy"
+	name = "SignalFxReadPermissionsPolicy-${random_id.suffix.dec}"
 	description = "AWS Policy"
 	policy = <<EOF
 {
