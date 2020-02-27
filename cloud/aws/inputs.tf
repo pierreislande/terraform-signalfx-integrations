@@ -6,7 +6,7 @@ variable "enabled" {
 }
 
 variable "aws_regions" {
-  description = "List of AWS regions that SignalFx should monitor."
+  description = "List of AWS regions that SignalFx should monitor. Set to \"[]\" to gather every regions."
   default = ["eu-west-1"]
 }
 
