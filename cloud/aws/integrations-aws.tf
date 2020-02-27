@@ -5,9 +5,9 @@ resource "signalfx_aws_external_integration" "aws_claranet_external" {
 resource "signalfx_aws_integration" "aws_claranet" {
 	enabled = var.enable_flag
 
-	integration_id = "${signalfx_aws_external_integration.aws_claranet_external.id}"
-	external_id = "${signalfx_aws_external_integration.aws_claranet_external.external_id}"
-	role_arn = "${aws_iam_role.aws_sfx_role.arn}"
+	integration_id = signalfx_aws_external_integration.aws_claranet_external.id
+	external_id = signalfx_aws_external_integration.aws_claranet_external.external_id
+	role_arn = aws_iam_role.aws_sfx_role.arn
 	regions = var.aws_regions
 	poll_rate = var.aws_poll_rate
 	import_cloud_watch = var.import_cloud_watch_flag
