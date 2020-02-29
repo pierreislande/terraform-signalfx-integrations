@@ -9,21 +9,26 @@ resource "signalfx_aws_integration" "aws_claranet" {
 	external_id = signalfx_aws_external_integration.aws_claranet_external.external_id
 	role_arn = aws_iam_role.aws_sfx_role.arn
 	regions = var.aws_regions
-	poll_rate = var.poll_rate
+	poll_rate = var.aws_poll_rate
 	import_cloud_watch = var.import_cloudwatch
 	enable_aws_usage = var.import_aws_usage
-
-	/*custom_namespace_sync_rule {
-		default_action = var.custom_namespace_rules_default_action
-		filter_action = var.custom_namespace_rules_filter_action
-		filter_source = var.custom_namespace_rules_filter_source
-		namespace = var.custom_namespace_rules_namespace
-	}
 
 	namespace_sync_rule {
 		default_action = var.namespace_rules_default_action
 		filter_action = var.namespace_rules_filter_action
-		filter_source = var.namespace_rules_filter_source
-		namespace = var.namespace_rules_namespace
-	}*/
+		filter_source = var.namespace_rules_filter_source_1
+		namespace = var.namespace_rules_1
+	}
+
+	dynamic "namespace_sync_rule" {
+		iterator = iter
+		for_each = var.namespace_rules_list
+		content {
+			default_action = var.namespace_rules_default_action
+			filter_action = var.namespace_rules_filter_action
+			filter_source = var.namespace_rules_filter_source
+			namespace = iter.value
+		}
+	}
+
 }
