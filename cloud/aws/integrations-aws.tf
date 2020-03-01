@@ -5,8 +5,8 @@ resource "signalfx_aws_external_integration" "sfx_integration_external" {
 resource "signalfx_aws_integration" "sfx_integration" {
 	enabled = var.enabled
 
-	integration_id = signalfx_aws_external_integration.aws_claranet_external.id
-	external_id = signalfx_aws_external_integration.aws_claranet_external.external_id
+	integration_id = signalfx_aws_external_integration.sfx_integration_external.id
+	external_id = signalfx_aws_external_integration.sfx_integration_external.external_id
 	role_arn = aws_iam_role.sfx_role.arn
 	regions = var.aws_regions
 	poll_rate = var.aws_poll_rate
