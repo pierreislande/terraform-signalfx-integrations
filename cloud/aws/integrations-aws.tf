@@ -1,8 +1,8 @@
-resource "signalfx_aws_external_integration" "aws_claranet_external" {
+resource "signalfx_aws_external_integration" "sfx_integration_external" {
 	name = "AWSClaranetIntegration-${random_id.suffix.b64_url}"
 }
 
-resource "signalfx_aws_integration" "aws_claranet" {
+resource "signalfx_aws_integration" "sfx_integration" {
 	enabled = var.enabled
 
 	integration_id = signalfx_aws_external_integration.aws_claranet_external.id
@@ -13,7 +13,11 @@ resource "signalfx_aws_integration" "aws_claranet" {
 	import_cloud_watch = var.import_cloudwatch
 	enable_aws_usage = var.import_aws_usage
 
-	namespace_sync_rule {
+	/*  Error:
+    var.namespace_rules_filter_source_1 is tuple with 1 element
+    Inappropriate value for attribute "filter_source": string required.
+    
+    namespace_sync_rule {
 		default_action = var.namespace_rules_default_action
 		filter_action = var.namespace_rules_filter_action
 		filter_source = var.namespace_rules_filter_source_1
@@ -29,6 +33,6 @@ resource "signalfx_aws_integration" "aws_claranet" {
 			filter_source = var.namespace_rules_filter_source
 			namespace = iter.value
 		}
-	}
+	}*/
 
 }

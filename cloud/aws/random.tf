@@ -1,3 +1,3 @@
 resource "random_id" "suffix" {
-  byte_length = 8
+  byte_length = 4
 }
