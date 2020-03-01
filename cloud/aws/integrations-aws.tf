@@ -1,5 +1,5 @@
 resource "signalfx_aws_external_integration" "sfx_integration_external" {
-	name = "AWSClaranetIntegration-${random_id.suffix.b64_url}"
+	name = "AWSIntegration-${random_id.suffix.b64_url}"
 }
 
 resource "signalfx_aws_integration" "sfx_integration" {
