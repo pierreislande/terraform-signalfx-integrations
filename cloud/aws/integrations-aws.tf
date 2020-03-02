@@ -30,6 +30,6 @@ resource "signalfx_aws_integration" "sfx_integration" {
 			filter_source = var.namespace_rules_filter_source
 			namespace = iter.value
 		}
-	}*
+	}
 
 }
