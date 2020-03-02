@@ -13,9 +13,6 @@ resource "signalfx_aws_integration" "sfx_integration" {
 	import_cloud_watch = var.import_cloudwatch
 	enable_aws_usage = var.import_aws_usage
 
-	/*  Error:
-    var.namespace_rules_filter_source_1 is tuple with 1 element
-    Inappropriate value for attribute "filter_source": string required.
     
     namespace_sync_rule {
 		default_action = var.namespace_rules_default_action
@@ -33,6 +30,6 @@ resource "signalfx_aws_integration" "sfx_integration" {
 			filter_source = var.namespace_rules_filter_source
 			namespace = iter.value
 		}
-	}*/
+	}*
 
 }
