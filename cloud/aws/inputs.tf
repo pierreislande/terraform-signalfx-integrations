@@ -77,6 +77,6 @@ variable "namespace_rules_1" {
 }
 
 variable "namespace_rules_filter_source_1" {
-	description = "(Required) Expression that selects the data that SignalFx should sync for the namespace associated with this sync rule. Value can be any valid SignalFlow filter expression. filter=((filter('key1', 'value1', 'value2')) and (not filter('key2', 'key3')))
+	description = "(Required) Expression that selects the data that SignalFx should sync for the namespace associated with this sync rule. Value can be any valid SignalFlow filter expression. filter=((filter('key1', 'value1', 'value2')) and (not filter('key2', 'key3')))"
 	default = "filter('aws_tag_claranet_monitored', 'true')"
 }
