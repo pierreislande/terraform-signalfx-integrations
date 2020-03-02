@@ -10,3 +10,9 @@ variable "gcp_project_id" {
   description = "GCP project id for use with the SignalFX GCP integration"
   type        = string
 }
+
+variable "suffix" {
+  description = "Optional suffix to identify and avoid duplication of unique resources"
+  type        = string
+  default     = ""
+}
