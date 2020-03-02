@@ -78,5 +78,5 @@ variable "namespace_rules_1" {
 
 variable "namespace_rules_filter_source_1" {
 	description = "(Required) Expression that selects the data that SignalFx should sync for the namespace associated with this sync rule. The expression uses the syntax defined for the SignalFlow filter() function; it can be any valid SignalFlow filter expression."
-	default = ["aws_tag_claranet_monitored:true"]
+	default = "aws_tag_claranet_monitored:true"
 }
