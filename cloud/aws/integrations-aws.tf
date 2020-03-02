@@ -25,9 +25,6 @@ resource "signalfx_aws_integration" "sfx_integration" {
 		iterator = iter
 		for_each = var.namespace_rules_list
 		content {
-			default_action = var.namespace_rules_default_action
-			filter_action = var.namespace_rules_filter_action
-			filter_source = var.namespace_rules_filter_source
 			namespace = iter.value
 		}
 	}
