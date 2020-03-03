@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "sfx_policy" {
-  name        = "SignalFxIntegrationPolicy${var.suffix == "" ? "" : "${title(var.suffix)}"}"
+  name        = "SignalFxIntegrationPolicy${var.suffix == "" ? "" : "-${title(var.suffix)}"}"
   description = "AWS Policy"
   policy      = <<EOF
 {
@@ -79,4 +79,21 @@ resource "aws_iam_policy" "sfx_policy" {
 	]
 }
 EOF
+}
+
+data "aws_iam_policy_document" "sfx_policy_doc" {
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "AWS"
+      identifiers = [signalfx_aws_external_integration.sfx_integration_external.signalfx_aws_account]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "sts:ExternalId"
+      values   = [signalfx_aws_external_integration.sfx_integration_external.external_id]
+    }
+  }
 }
