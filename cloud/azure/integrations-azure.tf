@@ -14,6 +14,6 @@ resource "signalfx_azure_integration" "azure_integration" {
   subscriptions = var.azure_subscription_ids
 
   depends_on = [
-    azurerm_role_assignment.signalfx_integration_sp_reader, # Make sure SP has
+    azurerm_role_assignment.signalfx_integration_sp_reader, # Make sure SP has RBAC role set.
   ]
 }
