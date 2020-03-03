@@ -1,5 +1,5 @@
 resource "signalfx_azure_integration" "azure_integration" {
-  name        = "AzureClaranetIntegration"
+  name        = coalesce(var.custom_sfx_integration_name, local.default_integration_name)
   enabled     = var.enabled
   environment = "azure"
 

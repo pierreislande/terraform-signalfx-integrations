@@ -11,6 +11,18 @@ variable "poll_rate" {
   default     = 60
 }
 
+variable "sfx_integration_name_suffix" {
+  description = "SignalFx Integration name suffix"
+  type        = string
+  default     = ""
+}
+
+variable "custom_sfx_integration_name" {
+  description = "SignalFx integration custom resource name"
+  type        = string
+  default     = ""
+}
+
 # Azure Resources Parameters
 variable "azure_tenant_id" {
   description = "Azure Tenant ID/Directory ID"
