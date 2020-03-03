@@ -20,7 +20,7 @@ resource "random_password" "signalfx_integration_password" {
 resource "azuread_service_principal_password" "signalfx_integration_sp_pwd" {
   service_principal_id = azuread_service_principal.signalfx_integration_sp.id
   value                = random_password.signalfx_integration_password.result
-  #  end_date             = "2020-01-01T01:02:03Z"
+  end_date_relative    = var.azure_sp_validation_time
 }
 
 resource "azurerm_role_assignment" "signalfx_integration_sp_reader" {
