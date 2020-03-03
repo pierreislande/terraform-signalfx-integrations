@@ -1,7 +1,7 @@
 resource "aws_iam_policy" "sfx_policy" {
-	name = "SignalFxIntegrationPolicy${var.suffix == "" ? "" : "${title(var.suffix)}"}"
-	description = "AWS Policy"
-	policy = <<EOF
+  name        = "SignalFxIntegrationPolicy${var.suffix == "" ? "" : "${title(var.suffix)}"}"
+  description = "AWS Policy"
+  policy      = <<EOF
 {
 "Version": "2012-10-17",
 "Statement": [
