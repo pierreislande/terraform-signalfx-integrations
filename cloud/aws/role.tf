@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "sfx_policy_doc" {
 }
 
 resource "aws_iam_role" "sfx_role" {
-	name = "SignalFxAWSIntegrationRole-${random_id.suffix.b64_url}"
+	name = "SignalFxIntegration${var.suffix == "" ? "" : "${title(var.suffix)}"}"
 	description = "signalfx integration to read out data and send it to signalfxs aws account"
 	assume_role_policy = data.aws_iam_policy_document.sfx_policy_doc.json
 }

@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "sfx_policy" {
-	name = "SignalFxReadPermissionsPolicy-${random_id.suffix.b64_url}"
+	name = "SignalFxIntegrationPolicy${var.suffix == "" ? "" : "${title(var.suffix)}"}"
 	description = "AWS Policy"
 	policy = <<EOF
 {

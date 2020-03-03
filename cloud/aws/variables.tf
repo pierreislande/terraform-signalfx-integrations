@@ -1,18 +1,22 @@
-# AWS Integration specific
-
 variable "enabled" {
 	description = "(Required) Whether the integration is enabled"
 	default = "true"
 }
 
-variable "aws_regions" {
-	description = "(Optional) List of AWS regions that SignalFx should monitor."
-	default = ["eu-west-1"]
-}
-
 variable "poll_rate" {
 	description = "(Optional) AWS poll rate (in seconds). One of 60 or 300."
 	default = 300
+}
+
+variable "suffix" {
+  description = "Optional suffix to identify and avoid duplication of unique resources"
+  type        = string
+  default     = ""
+}
+
+variable "aws_regions" {
+	description = "(Optional) List of AWS regions that SignalFx should monitor."
+	default = ["eu-west-1"]
 }
 
 variable "import_cloudwatch" {
