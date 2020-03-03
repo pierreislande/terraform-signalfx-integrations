@@ -10,7 +10,7 @@ variable "aws_regions" {
 	default = ["eu-west-1"]
 }
 
-variable "aws_poll_rate" {
+variable "poll_rate" {
 	description = "(Optional) AWS poll rate (in seconds). One of 60 or 300."
 	default = 300
 }
@@ -66,10 +66,8 @@ variable "namespace_rules_filter_source" {
 
 variable "namespace_rules_list" {
 	description = "(Required) An AWS namespace having AWS metrics that you want to sync with SignalFx. See the AWS documentation on publishing metrics for more information."
-	default = ["AWS/ApiGateway","AWS/AppStream","AWS/AutoScaling","AWS/Billing","AWS/CloudFront","AWS/CloudSearch","AWS/Events","AWS/Logs","AWS/Connect","AWS/DMS","AWS/DX","AWS/DynamoDB","AWS/EC2","AWS/EC2Spot","AWS/ECS","AWS/ElasticBeanstalk","AWS/EBS","AWS/EFS","AWS/ELB","AWS/ApplicationELB","AWS/NetworkELB","AWS/ElasticTranscoder","AWS/ElastiCache","AWS/ES","AWS/ElasticMapReduce","AWS/GameLift","AWS/Inspector","AWS/IoT","AWS/KMS","AWS/KinesisAnalytics","AWS/Firehose","AWS/Kinesis","AWS/KinesisVideo","AWS/Lambda","AWS/Lex","AWS/ML","AWS/OpsWorks","AWS/Polly","AWS/Redshift","AWS/RDS","AWS/Route53","AWS/SageMaker","AWS/DDoSProtection","AWS/SES","AWS/SNS","AWS/SQS","AWS/S3","AWS/SWF","AWS/States","AWS/StorageGateway","AWS/Translate","AWS/NATGateway","AWS/VPN (VPN)","WAF","AWS/WorkSpaces"]
+	default = ["AWS/ApiGateway","AWS/AppStream","AWS/AutoScaling","AWS/Billing","AWS/CloudFront","AWS/CloudSearch","AWS/Events","AWS/Logs","AWS/Connect","AWS/DMS","AWS/DX","AWS/DynamoDB","AWS/EC2Spot","AWS/ECS","AWS/ElasticBeanstalk","AWS/EBS","AWS/EFS","AWS/ELB","AWS/ApplicationELB","AWS/NetworkELB","AWS/ElasticTranscoder","AWS/ElastiCache","AWS/ES","AWS/ElasticMapReduce","AWS/GameLift","AWS/Inspector","AWS/IoT","AWS/KMS","AWS/KinesisAnalytics","AWS/Firehose","AWS/Kinesis","AWS/KinesisVideo","AWS/Lambda","AWS/Lex","AWS/ML","AWS/OpsWorks","AWS/Polly","AWS/Redshift","AWS/RDS","AWS/Route53","AWS/SageMaker","AWS/DDoSProtection","AWS/SES","AWS/SNS","AWS/SQS","AWS/S3","AWS/SWF","AWS/States","AWS/StorageGateway","AWS/Translate","AWS/NATGateway","AWS/VPN (VPN)","WAF","AWS/WorkSpaces"]
 }
-
-#####
 
 variable "namespace_rules_1" {
 	description = "(Required) Expression that selects the data that SignalFx should sync for the namespace associated with this sync rule. The expression uses the syntax defined for the SignalFlow filter() function; it can be any valid SignalFlow filter expression."

@@ -9,7 +9,7 @@ resource "signalfx_aws_integration" "sfx_integration" {
 	external_id = signalfx_aws_external_integration.sfx_integration_external.external_id
 	role_arn = aws_iam_role.sfx_role.arn
 	regions = var.aws_regions
-	poll_rate = var.aws_poll_rate
+	poll_rate = var.poll_rate
 	import_cloud_watch = var.import_cloudwatch
 	enable_aws_usage = var.import_aws_usage
 
