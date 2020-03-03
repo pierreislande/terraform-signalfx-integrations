@@ -14,7 +14,6 @@ resource "azuread_service_principal" "signalfx_integration_sp" {
 resource "random_password" "signalfx_integration_password" {
   length  = 32
   special = true
-  #  override_special = "_%@"
 }
 
 resource "azuread_service_principal_password" "signalfx_integration_sp_pwd" {
