@@ -1,5 +1,5 @@
 resource "signalfx_azure_integration" "azure_integration" {
-  name        = format("AzureClaranetIntegration-%s", random_id.suffix.b64_url)
+  name        = "AzureClaranetIntegration"
   enabled     = var.enabled
   environment = "azure"
 
