@@ -25,9 +25,3 @@ variable "gcp_project_id" {
   type        = string
 }
 
-variable "suffix" {
-  description = "Optional suffix to identify and avoid duplication of unique resources"
-  type        = string
-  default     = ""
-}
-
