@@ -1,14 +1,22 @@
+# Global
+
+variable "suffix" {
+  description = "Optional suffix to identify and avoid duplication of unique resources"
+  type        = string
+  default     = ""
+}
+
 # Azure Integration specific
+
 variable "enabled" {
-  description = "Flag that controls whether the integration is enabled"
+  description = "Whether the Azure integration is enabled"
   type        = bool
   default     = true
 }
 
 variable "poll_rate" {
-  description = "Poll rate (in seconds). One of 60 or 300."
-  type        = number
-  default     = 60
+  description = "AWS poll rate in seconds (60 or 300)"
+  default     = 300
 }
 
 variable "sfx_integration_name_suffix" {
